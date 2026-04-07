@@ -140,26 +140,6 @@ Then open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-## 🧩 How the i18n System Works
-
-All UI strings live in typed locale files (`src/i18n/*.ts`). Components call the `useTranslation()` hook to get the current language's string object (`tr`) and an interpolation helper (`t`):
-
-```tsx
-const { tr, t } = useTranslation();
-
-// Simple key
-<button>{tr.gotIt}</button>  // "Got it! ✓" / "¡Entendido! ✓" / "Begrepen! ✓"
-
-// With variable interpolation
-<p>{t(tr.worldMapWelcome, { name: playerName })}</p>
-// → "Welcome, Alice! Choose a room to enter."
-// → "¡Bienvenido, Alice! Elige una sala para entrar."
-```
-
-Scene content (dialogue, hotspot text, titles) is handled separately in `scenes.localized.ts` via `getLocalizedScene(sceneId, lang)`, which is called in `App.tsx` before passing the scene to `SceneRenderer`.
-
----
-
 ## 🚢 Deployment (GitHub Pages)
 
 The game auto-deploys to `https://YOUR_USERNAME.github.io/mcp-academy/` on every push to `main` via GitHub Actions.
