@@ -6,6 +6,9 @@
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green)
+![Deploy](https://github.com/YOUR_USERNAME/mcp-academy/actions/workflows/deploy.yml/badge.svg)
+
+🎮 **[Play it live → https://YOUR_USERNAME.github.io/mcp-academy/](https://YOUR_USERNAME.github.io/mcp-academy/)**
 
 ---
 
@@ -154,6 +157,25 @@ const { tr, t } = useTranslation();
 ```
 
 Scene content (dialogue, hotspot text, titles) is handled separately in `scenes.localized.ts` via `getLocalizedScene(sceneId, lang)`, which is called in `App.tsx` before passing the scene to `SceneRenderer`.
+
+---
+
+## 🚢 Deployment (GitHub Pages)
+
+The game auto-deploys to `https://YOUR_USERNAME.github.io/mcp-academy/` on every push to `main` via GitHub Actions.
+
+### One-time setup (do this once after pushing the code)
+
+1. Go to your repository on GitHub → **Settings → Pages**
+2. Under **Build and deployment → Source**, select **GitHub Actions**
+3. Save — that's it. The next push to `main` will trigger the workflow
+
+The workflow file lives at [.github/workflows/deploy.yml](.github/workflows/deploy.yml) and:
+- Runs `npm ci` + `npm run build`
+- Uploads the `dist/` folder as a Pages artifact
+- Deploys it to GitHub Pages via the official `actions/deploy-pages` action
+
+> **Note:** Replace `YOUR_USERNAME` in the README badges and links with your actual GitHub username.
 
 ---
 
