@@ -8,7 +8,7 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Deploy](https://github.com/YOUR_USERNAME/mcp-academy/actions/workflows/deploy.yml/badge.svg)
 
-🎮 **[Play it live → https://YOUR_USERNAME.github.io/mcp-academy/](https://YOUR_USERNAME.github.io/mcp-academy/)**
+🎮 **[Play it live → https://alejandrolunatech.github.io/mcp-academy/](https://alejandrolunatech.github.io/mcp-academy/)**
 
 ---
 
