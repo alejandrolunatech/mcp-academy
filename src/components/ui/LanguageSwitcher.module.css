@@ -1,0 +1,62 @@
+.switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.switcherLabel {
+  font-size: 1rem;
+  margin-right: 2px;
+  opacity: 0.8;
+}
+
+.langBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border: 1.5px solid rgba(255 255 255 / 0.15);
+  border-radius: 8px;
+  background: rgba(255 255 255 / 0.07);
+  color: var(--text-muted, #b0b0d0);
+  font-family: var(--font-body, 'Nunito', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, color 0.18s, transform 0.12s;
+  line-height: 1;
+}
+
+.langBtn:hover {
+  background: rgba(255 255 255 / 0.14);
+  border-color: rgba(255 215 0 / 0.4);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.langBtn.active {
+  background: rgba(255 215 0 / 0.18);
+  border-color: var(--accent-gold, #f0c040);
+  color: var(--accent-gold, #f0c040);
+  box-shadow: 0 0 8px rgba(240 192 64 / 0.35);
+}
+
+.flag {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.code {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+}
+
+/* Compact mode — flags only, no label text */
+.compact .langBtn {
+  padding: 3px 6px;
+}
+
+.compact .flag {
+  font-size: 0.9rem;
+}

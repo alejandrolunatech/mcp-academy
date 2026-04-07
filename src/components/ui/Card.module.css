@@ -1,0 +1,33 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  backdrop-filter: blur(8px);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.clickable:focus-visible {
+  outline: 3px solid var(--accent-gold);
+  outline-offset: 3px;
+}
+
+.glowing {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 12px rgba(255, 183, 0, 0.3), 0 0 24px rgba(255, 183, 0, 0.1);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 12px rgba(255, 183, 0, 0.3), 0 0 24px rgba(255, 183, 0, 0.1); }
+  50% { box-shadow: 0 0 20px rgba(255, 183, 0, 0.5), 0 0 40px rgba(255, 183, 0, 0.2); }
+}

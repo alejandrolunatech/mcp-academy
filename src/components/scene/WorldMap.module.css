@@ -1,0 +1,201 @@
+.mapPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d001f 0%, #1a0533 50%, #0d001f 100%);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Header ── */
+.mapHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.academy {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.academyEmoji {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 0 16px rgba(255, 183, 0, 0.5));
+}
+
+.academyTitle {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--accent-gold);
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 0 0 20px rgba(255, 183, 0, 0.3);
+}
+
+.academySubtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0.2rem 0 0;
+}
+
+.academySubtitle strong {
+  color: var(--accent-gold);
+}
+
+.headerRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.stats {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.statPill {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-color);
+  border-radius: 2rem;
+  padding: 0.3rem 0.9rem;
+}
+
+/* ── Progress Bar ── */
+.progressBar {
+  position: relative;
+  height: 1.2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-gold), #ffe066);
+  border-radius: 2rem;
+  transition: width 0.6s ease;
+}
+
+.progressLabel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--bg-primary);
+  mix-blend-mode: difference;
+}
+
+/* ── Legend ── */
+.legend {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legendDot {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ── Room Grid ── */
+.roomGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.roomCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--room-color, #6b2fa0);
+  border-radius: 1.25rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  min-height: 160px;
+  text-align: center;
+}
+
+.roomCard:not(.locked):hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4),
+    0 0 20px color-mix(in srgb, var(--room-color, #6b2fa0) 40%, transparent);
+}
+
+.roomCard:focus-visible {
+  outline: 3px solid var(--accent-gold);
+  outline-offset: 3px;
+}
+
+.locked {
+  opacity: 0.45;
+  filter: grayscale(0.7);
+  cursor: not-allowed;
+}
+
+.completed {
+  background: rgba(46, 204, 113, 0.08);
+  border-color: #2ecc71;
+}
+
+.roomEmoji {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+}
+
+.roomLabel {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.pathTag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.checkmark {
+  font-size: 1.2rem;
+}
+
+.lockedLabel {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

@@ -1,0 +1,180 @@
+.scene {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(255, 183, 0, 0.04) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.header {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.5rem 2rem 1rem;
+  gap: 1rem;
+}
+
+.titleBlock {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.sceneEmoji {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 12px rgba(255, 183, 0, 0.4));
+}
+
+.sceneTitle {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.sceneSubtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0.2rem 0 0;
+}
+
+.completedBadge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2ecc71;
+  background: rgba(46, 204, 113, 0.15);
+  border: 1px solid rgba(46, 204, 113, 0.4);
+  padding: 0.25rem 0.7rem;
+  border-radius: 2rem;
+}
+
+.characters {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 2rem 1rem;
+  flex-wrap: wrap;
+}
+
+.characterCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.charName {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.hotspotArea {
+  position: relative;
+  flex: 1;
+  min-height: 340px;
+}
+
+.noHotspots {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+  padding-top: 3rem;
+}
+
+/* ─── Completion footer ──────────────────────────── */
+.footer {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 2rem 1.5rem;
+  background: rgba(0, 0, 0, 0.45);
+  border-top: 1px solid var(--border-color);
+  backdrop-filter: blur(8px);
+}
+
+.checklist {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.checkDone {
+  color: #2ecc71;
+  font-weight: 700;
+}
+
+.checkPending {
+  color: var(--text-muted);
+}
+
+.footerActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ─── Unlock banner ──────────────────────────────── */
+.unlockBanner {
+  position: fixed;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(26, 5, 51, 0.96);
+  border: 2px solid var(--accent-gold);
+  border-radius: 1.25rem;
+  padding: 1rem 1.75rem;
+  box-shadow: 0 8px 40px rgba(255, 183, 0, 0.3);
+  animation: bannerIn 0.3s ease;
+  min-width: 280px;
+}
+
+@keyframes bannerIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.unlockEmoji {
+  font-size: 2rem;
+}
+
+.unlockBanner strong {
+  display: block;
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.unlockBanner p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0.2rem 0 0;
+}
